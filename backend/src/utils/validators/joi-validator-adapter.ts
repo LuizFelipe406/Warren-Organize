@@ -10,7 +10,7 @@ export class JoiValidatorAdapter implements Validation {
       email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
         .required(),
-      username: Joi.string().min(3).required(),
+      name: Joi.string().min(3).required(),
     })
   }
 
