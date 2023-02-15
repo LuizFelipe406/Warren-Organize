@@ -1,4 +1,4 @@
-import { AccountModel } from "../entity/account";
+import { AccountModel } from "../../entity/account";
 
 export type AddAccountModel = Omit<AccountModel, "id">
 
