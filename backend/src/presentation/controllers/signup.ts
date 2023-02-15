@@ -1,14 +1,17 @@
 import { Controller } from "../protocols/controller";
 import { Validation } from "../../utils/validators/validation";
 import { HttpRequest, HttpResponse } from "../protocols/http";
-import { badRequest, created } from "../helpers/http-helpers";
-import { AddAccount } from "../../domain/use-case/add-account";
+import { badRequest, conflict, created } from "../helpers/http-helpers";
+import { AddAccount } from "../../domain/use-cases/account/add-account";
+import { GetAccount } from "../../domain/use-cases/account/get-account";
 
 export class SignUpController implements Controller {
+  private readonly getAccount: GetAccount
   private readonly addAccount: AddAccount
   private readonly validation: Validation
 
-  constructor (addAccount: AddAccount, validation: Validation) {
+  constructor (getAccount: GetAccount, addAccount: AddAccount, validation: Validation) {
+    this.getAccount = getAccount
     this.addAccount = addAccount
     this.validation = validation
   }
@@ -18,6 +21,9 @@ export class SignUpController implements Controller {
     if (error) return badRequest(error)
 
     const { name, email, password } = httpRequest.body
+
+    const accountAlreadyExists = await this.getAccount.get(email)
+    if (accountAlreadyExists) return conflict("Account already exists")
 
     const newAccount = await this.addAccount.add({ name, email, password })
     return created(newAccount)
