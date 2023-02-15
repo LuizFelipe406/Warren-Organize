@@ -1,5 +1,5 @@
 import { Controller } from "../protocols/controller";
-import { Validation } from "../../utils/validators/validation";
+import { Validation } from "../protocols/validation";
 import { HttpRequest, HttpResponse } from "../protocols/http";
 import { badRequest, conflict, created } from "../helpers/http-helpers";
 import { AddAccount } from "../../domain/use-cases/account/add-account";

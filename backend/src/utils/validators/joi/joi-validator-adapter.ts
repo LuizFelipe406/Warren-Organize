@@ -1,5 +1,5 @@
 import Joi from "joi"
-import { Validation } from "../validation";
+import { Validation } from "../../../presentation/protocols/validation";
 
 export class JoiAccountValidatorAdapter implements Validation {
   private schema: Joi.ObjectSchema
