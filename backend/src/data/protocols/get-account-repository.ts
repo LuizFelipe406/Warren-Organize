@@ -1,5 +1,5 @@
 import { AccountModel } from "../../domain/entity/account";
 
 export interface GetAccountRepository {
-  get (email: string): Promise<AccountModel | undefined>
+  get (email: string): Promise<AccountModel | null>
 }
