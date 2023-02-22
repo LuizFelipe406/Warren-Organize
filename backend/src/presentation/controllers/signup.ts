@@ -25,7 +25,7 @@ export class SignUpController implements Controller {
     const accountAlreadyExists = await this.getAccount.get(email)
     if (accountAlreadyExists) return conflict("Account already exists")
 
-    const newAccount = await this.addAccount.add({ name, email, password })
-    return created(newAccount)
+    await this.addAccount.add({ name, email, password })
+    return created({ message: "created" })
   }
 }
