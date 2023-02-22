@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "./build/server",
+  "main": "./build/main/config/server",
   "scripts": {
     "db:reset": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
     "build": "npx -y tsc",
