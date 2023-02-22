@@ -9,7 +9,7 @@ export class DbGetAccount implements GetAccount {
     this.getAccountRepository = getAccountRepository
   }
 
-  get(email: string): Promise<AccountModel | undefined> {
+  get(email: string): Promise<AccountModel | null> {
     return this.getAccountRepository.get(email)
   }
 }
