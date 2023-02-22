@@ -1,7 +1,7 @@
 import Joi from "joi"
 import { Validation } from "../../../presentation/protocols/validation";
 
-export class JoiAccountValidatorAdapter implements Validation {
+export class JoiValidatorAdapter implements Validation {
   private schema: Joi.ObjectSchema
 
   constructor (schema: Joi.ObjectSchema) {
