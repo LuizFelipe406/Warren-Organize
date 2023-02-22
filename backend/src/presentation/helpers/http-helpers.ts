@@ -14,3 +14,8 @@ export const badRequest = (error: Error): HttpResponse => ({
   body: { message: error.message },
   statusCode: 400
 })
+
+export const goodRequest = (message: string): HttpResponse => ({
+  body: { message },
+  statusCode: 200
+})
