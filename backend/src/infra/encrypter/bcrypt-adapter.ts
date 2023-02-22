@@ -1,5 +1,5 @@
 import bcrypt from "bcryptjs"
-import Encrypter from "../../data/protocols/encrypter";
+import Encrypter from "../../data/protocols/cryptography/encrypter";
 
 export class BCryptAdapter implements Encrypter {
   encrypt(input: string): string {

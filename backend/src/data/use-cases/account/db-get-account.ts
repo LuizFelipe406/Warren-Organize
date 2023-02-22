@@ -1,6 +1,6 @@
 import { AccountModel } from "../../../domain/entity/account";
 import { GetAccount } from "../../../domain/use-cases/account/get-account";
-import { GetAccountRepository } from "../../protocols/get-account-repository";
+import { GetAccountRepository } from "../../protocols/account/get-account-repository";
 
 export class DbGetAccount implements GetAccount {
   private readonly getAccountRepository: GetAccountRepository

@@ -1,4 +1,4 @@
-import { GetAccountRepository } from "../../../../data/protocols/get-account-repository";
+import { GetAccountRepository } from "../../../../data/protocols/account/get-account-repository";
 import { AccountModel } from "../../../../domain/entity/account";
 import Account from "../models/Account";
 
