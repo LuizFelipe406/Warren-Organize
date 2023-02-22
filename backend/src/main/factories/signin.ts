@@ -7,7 +7,7 @@ import { Controller } from "../../presentation/protocols/controller"
 import { JoiValidatorAdapter } from "../../utils/validators/joi/joi-validator-adapter"
 import { schema } from "../../utils/validators/joi/schemas/login-account-schema"
 
-export const makeSignUpController = (): Controller => {
+export const makeSignInController = (): Controller => {
   const getAccountRepository = new GetAccountSequelize()
   const hashComparer = new BCryptComparerAdapter()
   const tokenGenerator = new JwtGenerateAdapter()
