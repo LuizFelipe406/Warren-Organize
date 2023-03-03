@@ -19,3 +19,8 @@ export const goodRequest = (message: string): HttpResponse => ({
   body: { message },
   statusCode: 200
 })
+
+export const unauthorized = (message: string): HttpResponse => ({
+  body: { message },
+  statusCode: 401
+})
