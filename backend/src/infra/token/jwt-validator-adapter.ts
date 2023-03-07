@@ -12,7 +12,8 @@ export default class JwtValidatorAdapter implements TokenValidator {
       const payload = jwt.verify(token, this.secret) as JwtPayload;
       return payload.id
     } catch (error) {
-      throw new Error(error)
+      if (error instanceof Error) throw new Error(error.message)
+      throw new Error("invalid token")
     }
   }
   
