@@ -4,5 +4,6 @@ export const schema = Joi.object({
   name: Joi.string().required(),
   amount: Joi.number().required(),
   date: Joi.date().required(),
-  category: Joi.string().required()
+  category: Joi.string().required(),
+  type: Joi.string().required()
 })

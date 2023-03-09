@@ -28,13 +28,14 @@ export default class CreateMoneyMovementController implements Controller {
       const userId = this.tokenValidator.validate(
         httpRequest.headers.authorization
       );
-      const { name, amount, date, category } = httpRequest.body;
+      const { name, amount, date, category, type } = httpRequest.body;
       const newMoneyMovement = await this.createMoneyMovement.create({
         userId,
         name,
         amount,
         date,
         category,
+        type
       });
 
       return created(newMoneyMovement);
