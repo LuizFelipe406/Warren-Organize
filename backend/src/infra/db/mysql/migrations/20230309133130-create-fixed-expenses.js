@@ -4,7 +4,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('Revenues', {
+    await queryInterface.createTable('FixedExpenses', {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -17,10 +17,6 @@ module.exports = {
       },
       amount: {
         type: Sequelize.FLOAT,
-        allowNull: false,
-      },
-      date: {
-        type: Sequelize.DATE,
         allowNull: false,
       },
       category: {
@@ -46,6 +42,6 @@ module.exports = {
   },
 
   async down (queryInterface) {
-    await queryInterface.dropTable('Revenues');
+    await queryInterface.dropTable('FixedExpenses');
   }
 };
