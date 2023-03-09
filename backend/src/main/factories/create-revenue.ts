@@ -5,7 +5,7 @@ import CreateMoneyMovementController from "../../presentation/controllers/create
 import { JoiValidatorAdapter } from "../../utils/validators/joi/joi-validator-adapter"
 import { schema } from "../../utils/validators/joi/schemas/create-money-movement-schema"
 
-export const makeRevenueController = () => {
+export const makeCreateRevenueController = () => {
   const revenueRepository = new AddRevenueSequelize()
   const dbCreateRevenue = new DbCreateMoneyMovement(revenueRepository)
   const tokenValidator = new JwtValidatorAdapter()
