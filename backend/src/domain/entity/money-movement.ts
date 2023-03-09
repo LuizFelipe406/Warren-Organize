@@ -5,4 +5,5 @@ export interface MoneyMovementModel {
   amount: number;
   date: Date;
   category: string;
+  type: string;
 }

@@ -8,6 +8,7 @@ class Revenue extends Model {
   declare amount: number;
   declare date: Date;
   declare category: string;
+  declare type: string;
   declare userId: number;
 }
 
@@ -32,6 +33,10 @@ Revenue.init({
   category: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  type: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
   userId: {
     type: DataTypes.INTEGER,

@@ -2,17 +2,15 @@ import { DataTypes, Model } from 'sequelize';
 import sequelize from './index';
 import Account from './Account';
 
-class Expense extends Model {
+class FixedRevenue extends Model {
   declare id: number;
   declare name: string;
   declare amount: number;
-  declare date: Date;
   declare category: string;
-  declare type: string;
   declare userId: number;
 }
 
-Expense.init({
+FixedRevenue.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -26,31 +24,23 @@ Expense.init({
     type: DataTypes.NUMBER,
     allowNull: false,
   },
-  date: {
-    type: DataTypes.DATE,
-    allowNull: false,
-  },
   category: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
-  type: {
-    type: DataTypes.STRING,
-    allowNull: false
   },
   userId: {
     type: DataTypes.INTEGER,
   }
 }, {
-  modelName: 'Expense',
-  tableName: 'Expenses',
+  modelName: 'FixedRevenue',
+  tableName: 'FixedRevenues',
   timestamps: false,
   underscored: true,
   sequelize: sequelize,
 });
 
-Account.hasMany(Expense, { foreignKey: 'userId', as: 'user' });
+Account.hasMany(FixedRevenue, { foreignKey: 'userId' });
 
-Expense.belongsTo(Account, { foreignKey: 'userId', as: 'user' });
+FixedRevenue.belongsTo(Account, { foreignKey: 'userId' });
 
-export default Expense;
+export default FixedRevenue;
