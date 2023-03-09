@@ -21,7 +21,7 @@ export class SignInController implements Controller {
 
     try {
       const token = await this.signInAccount.signIn(email, password)
-      return goodRequest(token)
+      return goodRequest({ message: token })
     } catch (error) {
       if (error instanceof Error) return badRequest(error)
       return badRequest(new Error("something went wrong"))

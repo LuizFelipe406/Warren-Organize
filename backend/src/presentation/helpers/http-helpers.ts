@@ -15,8 +15,8 @@ export const badRequest = (error: Error): HttpResponse => ({
   statusCode: 400
 })
 
-export const goodRequest = (message: string): HttpResponse => ({
-  body: { message },
+export const goodRequest = (body: unknown): HttpResponse => ({
+  body,
   statusCode: 200
 })
 
